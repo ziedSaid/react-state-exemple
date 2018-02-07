@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,Route,Switch,Link,NavLink} from 'react-router-dom';
-import { Nav, NavItem } from 'reactstrap';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import Modal from 'react-modal';
@@ -17,11 +15,7 @@ const customStyles = {
   }
 };
 
-
-        
-        
-
-   class Header extends React.Component  {
+ class Header extends React.Component  {
        constructor(props){
          super(props)
           this.state = {
@@ -30,11 +24,10 @@ const customStyles = {
            inputValue:'',
            change:''
          }
-        
-        
-    
-       }
-       openModal=() =>{
+        }
+   
+   
+       openModal= () =>{
         this.setState(()=> ({modalIsOpen: true}));
       }
     
@@ -90,8 +83,7 @@ const customStyles = {
   </div>
   </header>
        <div className="container" >
-
-       <h1>  Handle State With React . </h1>
+        <h1>  Handle State With React . </h1>
        <hr />
        <h1>  {this.state.count}  </h1>
        <button className="btn blue" onClick={(e)=> {this.setState({change:'Add'});return this.openModal(e)} } > Add </button>
@@ -105,8 +97,7 @@ const customStyles = {
        style={customStyles}
        contentLabel="Example Modal"
        shouldCloseOnEsc={true}
-       
-       >
+      >
        
         <h3 >{this.state.change}</h3>
         <div className="row">
@@ -119,30 +110,7 @@ const customStyles = {
           <button className="btn green"  onClick={this.state.change === 'Add'? this.handleAdd:this.handleMinus}>ok</button>
           <button className="btn red" onClick={this.closeModal}>Close</button>
         
-         
-     </Modal>
- 
-       
-                   
-       </div>
-       </div>
-   
-      )
-    }
-    
-        
-
-       
-   
-  }
-
-
-
-
-
-
-
-
-
-
-ReactDOM.render(<Header />,document.getElementById('app'));
+        </Modal>
+      </div>
+       </div> ) }}
+    ReactDOM.render(<Header />,document.getElementById('app'));
